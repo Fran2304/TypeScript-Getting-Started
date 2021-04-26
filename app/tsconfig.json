@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.base",
+  "compilerOptions": {
+    "removeComments": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "traceResolution": true,
+    // "baseUrl": "./modules" // ser emepiece a buscar desde aqui cunado haya non-refences en ugra de buscar en node-modules :) 
+    
+    // "outFile": "../js/app.js"  // no compatible con  la opction de module
+  },
+  // esta parte de inclue hace recursion, por lo que compilará todo los archivos que esté dentro o en subdirectorios. Esto permitió usar player dentro de app.ts y el complidaor no se quejó,sin embargo no podemo nelazar ello con el html y tenememos error, por eso cambiamos a files. 
+  // "include": [
+  //   "./**/*"
+  // ],
+
+  // Cambiamos el include por files, 
+  "files": [
+    "./app.ts",
+  ]
+}
